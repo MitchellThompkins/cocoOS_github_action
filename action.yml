@@ -1,0 +1,16 @@
+# action.yml
+name: 'cocoOS-CI'
+description: 'Build and test cocoOS'
+inputs:
+  command:
+    description: 'Command to run'
+    required: true
+outputs:
+  error: # id of output
+    description: 'error code'
+runs:
+  using: 'docker'
+  image: 'dockerfile'
+  args:
+    - ${{ inputs.command }}
+
